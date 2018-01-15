@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">semadio</string>
+    <string name="english">English</string>
+    <string name="hindi">Hindi</string>
+    <string name="kannada">Kannada</string>
+    <string name="most_viewed">Most Viewed</string>
+    <string name="tamil">Tamil</string>
+    <string name="textview">TextView</string>
+</resources>
