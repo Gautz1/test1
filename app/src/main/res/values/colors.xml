@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="sample">#FFDC00</color>
+    <color name="text">#FFFFFF</color>
+    <color name="likes">#13A207</color>
+    <color name="desc">#F50D0A</color>
+    <color name="background">#000000</color>
 </resources>

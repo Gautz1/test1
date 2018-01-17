@@ -6,47 +6,118 @@
     android:layout_height="match_parent"
     tools:context="com.example.gautamdhariharan.semadio.video">
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        android:background="@color/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/video"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="199dp"
+        android:textColor="@color/text"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:text="For video embedding"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+
 
     <ScrollView
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/textView56"
-                android:layout_width="match_parent"
-                android:layout_height="199dp"
-                android:text="For video embedding" />
-
-            <TextView
-                android:id="@+id/textView58"
+                android:id="@+id/likes"
+                android:textAlignment="center"
+                android:background="@color/likes"
+                android:textColor="@color/text"
+                android:textAllCaps="true"
+                android:textSize="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Likes                                  Views" />
 
             <TextView
-                android:id="@+id/textView57"
+                android:id="@+id/desc"
+                android:textColor="@color/text"
+                android:background="@color/desc"
+                android:textAllCaps="true"
+                android:textSize="15dp"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Video Description" />
 
             <TextView
-                android:id="@+id/textView59"
+                android:id="@+id/suggestion1"
+                android:textColor="@color/text"
+                android:textAllCaps="true"
+                android:background="@color/colorAccent"
+                android:textSize="15dp"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="165dp"
-                android:text="TextView" />
+                android:text="Video" />
 
             <TextView
-                android:id="@+id/textView60"
+                android:id="@+id/suggestion2"
+                android:textColor="@color/text"
+                android:textAllCaps="true"
+                android:background="@color/colorPrimary"
+                android:textSize="15dp"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="217dp"
-                android:text="TextView" />
+                android:text="Video" />
+
+            <TextView
+                android:id="@+id/suggestion3"
+                android:textColor="@color/text"
+                android:textAllCaps="true"
+                android:background="@color/colorAccent"
+                android:textSize="15dp"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="165dp"
+                android:text="Video" />
+
+            <TextView
+                android:id="@+id/suggestion4"
+                android:textColor="@color/text"
+                android:textAllCaps="true"
+                android:background="@color/colorPrimary"
+                android:textSize="15dp"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="217dp"
+                android:text="Video" />
         </LinearLayout>
     </ScrollView>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -1,165 +1,86 @@
 package com.example.gautamdhariharan.semadio;
 
+import android.content.Context;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.content.Intent;
+import android.view.WindowManager;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import static android.R.attr.id;
 
 public class homeScreen extends AppCompatActivity {
+
+    private WindowManager screen;
+    private LinearLayout ll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
+        home_setup();
     }
-    public void click(View v){
-        Intent i=new Intent();
-        switch(v.getId()) {
-            case R.id.textView1:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView2:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView3:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView4:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView5:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView6:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView7:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView8:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView10:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView11:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView12:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView13:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView14:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView15:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView16:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView17:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView19:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView20:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView21:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView22:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView23:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView24:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView25:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView26:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView28:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView29:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView30:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView31:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView32:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView33:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView34:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView35:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView37:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView38:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView39:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView40:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView41:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView42:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView43:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView44:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView46:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView47:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView48:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView49:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView50:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView51:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView52:
-                i = new Intent(this, video.class);
-                break;
-            case R.id.textView53:
-                i = new Intent(this, video.class);
-                break;
+
+    void home_setup(){
+        ScreenParam sp = new ScreenParam();
+        int width = sp.getScreenWidth(homeScreen.this);int height = sp.getScreenHeight(homeScreen.this);
+        TextView text;
+        int height_ad,height_vid;
+        if(this.getResources().getConfiguration().orientation== Configuration.ORIENTATION_PORTRAIT){
+            height_ad=(int)(height/2.5);height_vid=height/3;
         }
+        else{
+            height_ad=height;height_vid=(int)(height/1.15);
+        }
+        ll=(LinearLayout)findViewById(R.id.adll);
+        for(int j=0;j<ll.getChildCount();j++){
+            text = (TextView)ll.getChildAt(j);
+            text.setWidth(width);text.setHeight(height_ad);
+        }
+        ll=(LinearLayout)findViewById(R.id.engll);
+        for(int j=0;j<ll.getChildCount();j++){
+            text = (TextView)ll.getChildAt(j);
+            text.setWidth(width);text.setHeight(height_vid);
+        }
+        ll=(LinearLayout)findViewById(R.id.hinll);
+        for(int j=0;j<ll.getChildCount();j++){
+            text = (TextView)ll.getChildAt(j);
+            text.setWidth(width);text.setHeight(height_vid);
+        }
+        ll=(LinearLayout)findViewById(R.id.tamll);
+        for(int j=0;j<ll.getChildCount();j++){
+            text = (TextView)ll.getChildAt(j);
+            text.setWidth(width);text.setHeight(height_vid);
+        }
+        ll=(LinearLayout)findViewById(R.id.mpll);
+        for(int j=0;j<ll.getChildCount();j++){
+            text = (TextView)ll.getChildAt(j);
+            text.setWidth(width);text.setHeight(height_vid);
+        }
+        ll=(LinearLayout)findViewById(R.id.telll);
+        for(int j=0;j<ll.getChildCount();j++){
+            text = (TextView)ll.getChildAt(j);
+            text.setWidth(width);text.setHeight(height_vid);
+        }
+        text = (TextView)findViewById(R.id.mostviewed);
+        text.setHeight(height/5);
+        text = (TextView)findViewById(R.id.english);
+        text.setHeight(height/5);
+        text = (TextView)findViewById(R.id.hindi);
+        text.setHeight(height/5);
+        text = (TextView)findViewById(R.id.tamil);
+        text.setHeight(height/5);
+        text = (TextView)findViewById(R.id.telugu);
+        text.setHeight(height/5);
+    }
+
+    public void click(View v){
+        Intent i = new Intent(this,video.class);
         startActivity(i);
     }
 
